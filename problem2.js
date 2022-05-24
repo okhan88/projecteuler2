@@ -24,32 +24,28 @@ function sumOfEvenValuedTerms(n) {
 
     */
 
-    let prevNum = 1
-    let currentNum = 2
-    let tempNum = 0
+    let prevNum = 0
+    let currentNum = 1
+    let tempNum = currentNum
     while (tempNum <= n) {
         tempNum = prevNum + currentNum
+        let a = tempNum / 2
+        if (Number.isInteger(a)) {
+            sum = sum + tempNum
+        }
+        
         if (tempNum > n) {
             break
         }
         prevNum = currentNum
 
         currentNum = tempNum
-        console.log("prevNum", prevNum)
-        console.log("currentNum", currentNum)
-        console.log("tempNum", tempNum)
-        console.log("")
     }
 
-
-
-
-
-
-    
-  
-    
     return sum;
-  }
+
+
+}
+
   
   console.log(sumOfEvenValuedTerms(4000000));
